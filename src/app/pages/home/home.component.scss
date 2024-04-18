@@ -1,0 +1,9 @@
+.home {
+  padding: 40px 0;
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+}

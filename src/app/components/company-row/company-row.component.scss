@@ -1,0 +1,43 @@
+.table {
+  &__row {
+    display: flex;
+
+    &-info {
+      display: flex;
+      text-decoration: none;
+      opacity: 1;
+      transition: 200ms color ease-in;
+
+      &:visited {
+        color: #000000;
+      }
+
+      &:hover {
+        color: var(--tui-primary);
+      }
+    }
+  }
+
+  &__cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 180px;
+    border: 1px solid #e2e2e2;
+    padding: 10px;
+  }
+}
+
+.modal-text {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.modal-controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}

@@ -1,0 +1,16 @@
+<table class="table">
+  <thead>
+    <tr class="table__row">
+      <td class="table__cell">Номер</td>
+      <td class="table__cell">Полное наименование организации</td>
+      <td class="table__cell">Сокращенное наименование организации</td>
+      <td class="table__cell">КПП</td>
+      <td class="table__cell">Почтовый адрес</td>
+      <td class="table__cell">Фактический адрес</td>
+      <td class="table__cell">Почтовый адрес</td>
+      <td class="table__cell"></td>
+    </tr>
+  </thead>
+  <app-company-row *ngFor="let company of data$ | async" [company]="company"></app-company-row>
+</table>
+

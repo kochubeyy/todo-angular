@@ -1,0 +1,58 @@
+
+<tr class="table__row">
+  <td class="table__cell">{{ company.id }}</td>
+  <td class="table__cell table__cell--bold" style="cursor: pointer" [routerLink]="['company', company.id]">{{ company.fullName }}</td>
+  <td class="table__cell">{{ company.shortName }}</td>
+  <td class="table__cell">{{ company.inn }}</td>
+  <td class="table__cell">{{ company.kpp }}</td>
+  <td class="table__cell">{{ company.postAddress }}</td>
+  <td class="table__cell">{{ company.factAddress }}</td>
+  <td class="table__cell table__cell--control">
+    <app-button
+      [icon]="tuiIconEdit2"
+      [appearance]="'primary'"
+      [tuiHint]="edit"
+      tuiHintAppearance="onDark"
+      tuiHintDirection="bottom"
+      [tuiHintShowDelay]="200"
+      [routerLink]="['/update', company.id]"
+    >
+    </app-button>
+    <ng-template #edit>Редактировать</ng-template>
+    <app-button
+      [icon]="tuiIconX"
+      [tuiHint]="remove"
+      [tuiHintShowDelay]="200"
+      tuiHintAppearance="onDark"
+      tuiHintDirection="bottom"
+      (onClick)="showDialog(template)"
+    ></app-button>
+    <ng-template #remove>Удалить</ng-template>
+    <ng-template
+      #template
+      let-observer
+    >
+      <div class="modal-text">
+        Вы уверены, что хотите удалить компанию из списка?
+      </div>
+      <div class="modal-controls">
+        <button
+          size="l"
+          tuiButton
+          type="button"
+          (click)="delete($event, observer)"
+        >
+          Да
+        </button>
+        <button
+          size="l"
+          tuiButton
+          type="button"
+          (click)="observer.complete()"
+        >
+          Нет
+        </button>
+      </div>
+    </ng-template>
+  </td>
+</tr>
